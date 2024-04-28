@@ -1,0 +1,3 @@
+Este archivo es provisional, sirve sólo para crear la carpeta en github.
+Una vez agregado el contenido real para este directorio de Api 
+este txt debe ser eliminado.
