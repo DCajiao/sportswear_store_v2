@@ -2,4 +2,9 @@
 
 ## Diagrams
 
+### Data Base
 ![DB Model](./diagrams/db_model.png)
+
+### Architecture
+
+![Architecture Model](./diagrams/architecture.png)
