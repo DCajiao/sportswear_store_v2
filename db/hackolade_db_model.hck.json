@@ -72,6 +72,21 @@
                     "error": {}
                 },
                 {
+                    "name": "lugar_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "ea97f368-62e7-4f33-80e7-240c8993632e",
+                    "foreignCollection": "e889e610-5604-4e9e-9b80-758252bdd5d4",
+                    "foreignField": [
+                        "e889e610-5604-4e9e-9b80-758252bdd5d4",
+                        "559d6b56-7e97-440a-b0f6-1dc6472023d4"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "e6fd49f2-c69d-434a-b005-cc0f2ace9b5d",
+                    "error": {}
+                },
+                {
                     "name": "cuentas",
                     "hackoladeMeta": {},
                     "isActivated": true,
@@ -139,21 +154,6 @@
                     "additionalItems": true,
                     "GUID": "62fc2736-f9c9-485b-9912-b8142aa079dc",
                     "error": {}
-                },
-                {
-                    "name": "lugar_id",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "type": "objectId",
-                    "GUID": "ea97f368-62e7-4f33-80e7-240c8993632e",
-                    "foreignCollection": "e889e610-5604-4e9e-9b80-758252bdd5d4",
-                    "foreignField": [
-                        "e889e610-5604-4e9e-9b80-758252bdd5d4",
-                        "559d6b56-7e97-440a-b0f6-1dc6472023d4"
-                    ],
-                    "relationshipType": "Foreign Key",
-                    "parentRelationship": "e6fd49f2-c69d-434a-b005-cc0f2ace9b5d",
-                    "error": {}
                 }
             ],
             "definitions": {
@@ -163,8 +163,8 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "validationLevel": "Off",
-            "validationAction": "Warn",
+            "validationLevel": "Moderate",
+            "validationAction": "Error",
             "storageEngineName": "WiredTiger",
             "collectionUsers": [],
             "indexes": [],
@@ -358,8 +358,8 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "validationLevel": "Off",
-            "validationAction": "Warn",
+            "validationLevel": "Moderate",
+            "validationAction": "Error",
             "storageEngineName": "WiredTiger",
             "collectionUsers": [],
             "indexes": [],
@@ -418,20 +418,32 @@
                     "GUID": "15ef437e-b442-4823-b934-a7c8b337a07a",
                     "enum": [
                         "Articulo",
-                        "Diseno"
+                        "Diseno",
+                        "Paquete"
                     ],
                     "required": true,
                     "error": {
                         "enum": false,
                         "enums": [
                             false,
+                            false,
                             false
                         ],
                         "exampleItems": [
                             false,
+                            false,
                             false
                         ]
                     }
+                },
+                {
+                    "name": "descripcion",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "e44ce528-acc8-4d9f-8d3c-c3af2756679c",
+                    "required": true,
+                    "error": {}
                 },
                 {
                     "name": "tipoArticulo",
@@ -498,14 +510,6 @@
                     "isActivated": true,
                     "type": "numeric",
                     "GUID": "964999ac-18d4-4b0a-a3e3-4898b4183b7d",
-                    "error": {}
-                },
-                {
-                    "name": "descripcionDiseno",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "type": "string",
-                    "GUID": "e44ce528-acc8-4d9f-8d3c-c3af2756679c",
                     "error": {}
                 },
                 {
@@ -594,8 +598,8 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "validationLevel": "Off",
-            "validationAction": "Warn",
+            "validationLevel": "Moderate",
+            "validationAction": "Error",
             "storageEngineName": "WiredTiger",
             "collectionUsers": [],
             "indexes": [],
@@ -688,8 +692,8 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "validationLevel": "Off",
-            "validationAction": "Warn",
+            "validationLevel": "Moderate",
+            "validationAction": "Error",
             "storageEngineName": "WiredTiger",
             "collectionUsers": [],
             "indexes": [],
@@ -743,8 +747,8 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "validationLevel": "Off",
-            "validationAction": "Warn",
+            "validationLevel": "Moderate",
+            "validationAction": "Error",
             "storageEngineName": "WiredTiger",
             "collectionUsers": [],
             "indexes": [],
@@ -898,8 +902,8 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "validationLevel": "Off",
-            "validationAction": "Warn",
+            "validationLevel": "Moderate",
+            "validationAction": "Error",
             "storageEngineName": "WiredTiger",
             "collectionUsers": [],
             "indexes": [],
@@ -967,20 +971,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 2558.411629431598,
-                        "y": 433.5741445890002
+                        "x": 2388.066691080729,
+                        "y": 1168.1884960876755
                     },
                     {
-                        "x": 2470.544950557893,
-                        "y": 433.5741445890002
+                        "x": 2300.200012207024,
+                        "y": 1168.1884960876755
                     },
                     {
-                        "x": 2470.544950557893,
-                        "y": 566.0727235449581
+                        "x": 2300.200012207024,
+                        "y": 1300.6870750436333
                     },
                     {
-                        "x": 2267.0116050175325,
-                        "y": 566.0727235449581
+                        "x": 2096.666666666664,
+                        "y": 1300.6870750436333
                     }
                 ],
                 "sides": [
@@ -1021,24 +1025,24 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 2967.378222856076,
-                        "y": 816.240811255668
+                        "x": 2797.0332845052058,
+                        "y": 1550.8551627543425
                     },
                     {
-                        "x": 2967.378222856076,
-                        "y": 791.240811255668
+                        "x": 2797.0332845052058,
+                        "y": 1525.8551627543425
                     },
                     {
-                        "x": 3164.878222856076,
-                        "y": 791.240811255668
+                        "x": 2994.5332845052058,
+                        "y": 1525.8551627543425
                     },
                     {
-                        "x": 3164.878222856076,
-                        "y": 988.740811255668
+                        "x": 2994.5332845052058,
+                        "y": 1723.3551627543425
                     },
                     {
-                        "x": 3139.878222856076,
-                        "y": 988.740811255668
+                        "x": 2969.5332845052058,
+                        "y": 1723.3551627543425
                     }
                 ],
                 "sides": [
@@ -1077,20 +1081,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 2558.411629431598,
-                        "y": 363.9074779223356
+                        "x": 2388.066691080729,
+                        "y": 1098.5218294210108
                     },
                     {
-                        "x": 1773.3175768065394,
-                        "y": 363.9074779223356
+                        "x": 1602.9726384556698,
+                        "y": 1098.5218294210108
                     },
                     {
-                        "x": 1773.3175768065394,
-                        "y": 364.29789963457426
+                        "x": 1602.9726384556698,
+                        "y": 1098.9122511332494
                     },
                     {
-                        "x": 1361.2175401854456,
-                        "y": 364.29789963457426
+                        "x": 1190.872601834577,
+                        "y": 1098.9122511332494
                     }
                 ],
                 "sides": [
@@ -1129,12 +1133,12 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1205.1502841724252,
-                        "y": 573.7075267504609
+                        "x": 1034.8053458215568,
+                        "y": 1308.3218782491363
                     },
                     {
-                        "x": 1205.1502841724252,
-                        "y": 395.385648501325
+                        "x": 1034.8053458215568,
+                        "y": 1130.0000000000002
                     }
                 ],
                 "sides": [
@@ -1175,20 +1179,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1621.3469533612633,
-                        "y": 1065.1614305373446
+                        "x": 1451.0020150103949,
+                        "y": 1799.7757820360227
                     },
                     {
-                        "x": 1506.3459458560656,
-                        "y": 1065.1614305373446
+                        "x": 1336.001007505197,
+                        "y": 1799.7757820360227
                     },
                     {
-                        "x": 1506.3459458560656,
-                        "y": 793.0408600837926
+                        "x": 1336.001007505197,
+                        "y": 1527.6552115824675
                     },
                     {
-                        "x": 1394.0116050175347,
-                        "y": 793.0408600837926
+                        "x": 1223.666666666666,
+                        "y": 1527.6552115824675
                     }
                 ],
                 "sides": [
@@ -1227,12 +1231,12 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1994.3469533612633,
-                        "y": 1082.7159095890966
+                        "x": 1824.0020150103949,
+                        "y": 1817.330261087774
                     },
                     {
-                        "x": 2794.878222856076,
-                        "y": 1082.7159095890966
+                        "x": 2624.5332845052058,
+                        "y": 1817.330261087774
                     }
                 ],
                 "sides": [
@@ -1273,20 +1277,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 2267.0116050175325,
-                        "y": 693.6408356697319
+                        "x": 2096.666666666664,
+                        "y": 1428.2551871684068
                     },
                     {
-                        "x": 2525.6115806034686,
-                        "y": 693.6408356697319
+                        "x": 2355.266642252599,
+                        "y": 1428.2551871684068
                     },
                     {
-                        "x": 2525.6115806034686,
-                        "y": 963.481952820361
+                        "x": 2355.266642252599,
+                        "y": 1698.0963043190368
                     },
                     {
-                        "x": 2794.878222856076,
-                        "y": 963.481952820361
+                        "x": 2624.5332845052058,
+                        "y": 1698.0963043190368
                     }
                 ],
                 "sides": [
@@ -1327,20 +1331,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 2267.0116050175325,
-                        "y": 747.6408356697319
+                        "x": 2096.666666666664,
+                        "y": 1482.2551871684072
                     },
                     {
-                        "x": 2428.2782472701338,
-                        "y": 747.6408356697319
+                        "x": 2257.933308919264,
+                        "y": 1482.2551871684072
                     },
                     {
-                        "x": 2428.2782472701338,
-                        "y": 1036.0564277183885
+                        "x": 2257.933308919264,
+                        "y": 1770.6707792170657
                     },
                     {
-                        "x": 2794.878222856076,
-                        "y": 1036.0564277183885
+                        "x": 2624.5332845052058,
+                        "y": 1770.6707792170657
                     }
                 ],
                 "sides": [
@@ -1381,20 +1385,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1941.0116050175325,
-                        "y": 631.9741690030653
+                        "x": 1770.6666666666638,
+                        "y": 1366.5885205017407
                     },
                     {
-                        "x": 1667.5116050175336,
-                        "y": 631.9741690030653
+                        "x": 1497.166666666665,
+                        "y": 1366.5885205017407
                     },
                     {
-                        "x": 1667.5116050175336,
-                        "y": 715.7075267504609
+                        "x": 1497.166666666665,
+                        "y": 1450.3218782491363
                     },
                     {
-                        "x": 1394.0116050175347,
-                        "y": 715.7075267504609
+                        "x": 1223.666666666666,
+                        "y": 1450.3218782491363
                     }
                 ],
                 "sides": [
@@ -1435,20 +1439,20 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 2267.0116050175325,
-                        "y": 631.9741690030653
+                        "x": 2096.666666666664,
+                        "y": 1366.5885205017403
                     },
                     {
-                        "x": 2601.611580603471,
-                        "y": 631.9741690030653
+                        "x": 2431.266642252599,
+                        "y": 1366.5885205017403
                     },
                     {
-                        "x": 2601.611580603471,
-                        "y": 859.4074779223346
+                        "x": 2431.266642252599,
+                        "y": 1594.02182942101
                     },
                     {
-                        "x": 2794.878222856076,
-                        "y": 859.4074779223346
+                        "x": 2624.5332845052058,
+                        "y": 1594.02182942101
                     }
                 ],
                 "sides": [
@@ -1503,7 +1507,6 @@
         "64a4b53b-42bd-49c4-bd3d-49a4ddeaa88f": "nombre",
         "811ea646-e173-4a0e-b35a-65505957ad57": "lugar_id",
         "993490a7-a4ac-40a2-bf16-2f894ae1b0da": "fk Envios.lugar_id to Lugares._id",
-        "ea97f368-62e7-4f33-80e7-240c8993632e": "lugar_id",
         "e6fd49f2-c69d-434a-b005-cc0f2ace9b5d": "fk Personas.lugar_id to Lugares._id",
         "8651bec6-3d86-4370-88ae-97cfe2ac8b76": "detallesCompra",
         "7b4349a9-6604-42de-b239-48b273d1f986": "talla",
@@ -1528,8 +1531,9 @@
         "3cb621d9-6a51-4196-9627-d4e5dce22914": "fk Compras.cuenta_usuario to Personas.cuentas.[0].usuario",
         "6bfe74e5-e48a-4f48-afa1-e965203813ed": "cuenta_usuario",
         "c00524a6-aeb6-43f4-a3b6-97941c1c839a": "descripcion ",
-        "e44ce528-acc8-4d9f-8d3c-c3af2756679c": "descripcionDiseno",
-        "a05b2a7e-8a41-48e5-9c3a-dc94cd6715a2": "fk Compras.detallesCompra.[0].producto_id to Productos._id"
+        "a05b2a7e-8a41-48e5-9c3a-dc94cd6715a2": "fk Compras.detallesCompra.[0].producto_id to Productos._id",
+        "e44ce528-acc8-4d9f-8d3c-c3af2756679c": "descripcion",
+        "ea97f368-62e7-4f33-80e7-240c8993632e": "lugar_id"
     },
     "definitions": {
         "type": "definitions",
@@ -1554,7 +1558,7 @@
     "creationTS": "2024-04-23T23:18:45.230Z",
     "GUID": "e3a919b8-9524-45c4-95cd-68f22bce881c",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-04-29T14:28:56.114Z",
+    "lastModifTS": "2024-04-29T15:31:43.255Z",
     "persistenceSchemaVersion": "7",
     "isCreatedByPlugin": true,
     "pluginInformation": {
@@ -1570,48 +1574,48 @@
                 "erd": [
                     {
                         "GUID": "cc72597a-12c6-4306-99c9-18cd35fd7653",
-                        "x": 1061.0116050175347,
-                        "y": 573.7075267504609,
+                        "x": 890.6666666666661,
+                        "y": 1308.3218782491363,
                         "width": 333,
                         "height": 284,
                         "color": {}
                     },
                     {
                         "GUID": "fca86119-6f55-45d9-94e3-ecf96a7017a0",
-                        "x": 1941.0116050175325,
-                        "y": 488.9741690030653,
+                        "x": 1770.6666666666638,
+                        "y": 1223.5885205017407,
                         "width": 326,
                         "height": 286,
                         "color": {}
                     },
                     {
                         "GUID": "c7464f6f-d805-473c-8b7b-b5bc5945cca2",
-                        "x": 2794.878222856076,
-                        "y": 816.240811255668,
+                        "x": 2624.5332845052058,
+                        "y": 1550.8551627543425,
                         "width": 345,
                         "height": 345,
                         "color": {}
                     },
                     {
                         "GUID": "0fb045ca-6999-4840-b947-4fd0c1ae2b36",
-                        "x": 2558.411629431598,
-                        "y": 300.5741445890021,
+                        "x": 2388.066691080729,
+                        "y": 1035.1884960876775,
                         "width": 246,
                         "height": 190,
                         "color": {}
                     },
                     {
                         "GUID": "e889e610-5604-4e9e-9b80-758252bdd5d4",
-                        "x": 1105.2175401854456,
-                        "y": 249.385648501325,
+                        "x": 934.8726018345769,
+                        "y": 984.0000000000002,
                         "width": 256,
                         "height": 146,
                         "color": {}
                     },
                     {
                         "GUID": "dff990cf-7280-4f29-87d1-32cce3cb2b3e",
-                        "x": 1621.3469533612633,
-                        "y": 911.8408275317121,
+                        "x": 1451.0020150103949,
+                        "y": 1646.4551790303872,
                         "width": 373,
                         "height": 309,
                         "color": {}
@@ -1625,13 +1629,13 @@
                 },
                 "buckets": [
                     {
-                        "x": 1021.0116050175347,
-                        "y": 209.385648501325,
+                        "x": 850.6666666666661,
+                        "y": 944.0000000000002,
                         "GUID": "692bbf8a-d17b-4aa2-a005-6e7baf835e2f"
                     }
                 ],
                 "collapsedNodes": [],
-                "activeRelationship": "a05b2a7e-8a41-48e5-9c3a-dc94cd6715a2",
+                "activeRelationship": "",
                 "activeRelationshipFields": {
                     "childField": [],
                     "parentField": []
