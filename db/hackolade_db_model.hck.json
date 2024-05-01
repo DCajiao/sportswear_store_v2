@@ -264,16 +264,11 @@
                                     "name": "producto_id",
                                     "hackoladeMeta": {},
                                     "isActivated": true,
-                                    "type": "string",
+                                    "type": "objectId",
+                                    "error": {},
                                     "GUID": "efa0b0e5-8fde-4e10-8570-ef1976c36064",
-                                    "foreignCollection": "c7464f6f-d805-473c-8b7b-b5bc5945cca2",
-                                    "foreignField": [
-                                        "c7464f6f-d805-473c-8b7b-b5bc5945cca2",
-                                        "9ba04ebf-2bdc-472b-806f-da5e5b55f6b9"
-                                    ],
-                                    "relationshipType": "Foreign Key",
                                     "parentRelationship": "a05b2a7e-8a41-48e5-9c3a-dc94cd6715a2",
-                                    "error": {}
+                                    "relationshipType": "Foreign Key"
                                 },
                                 {
                                     "hackoladeMeta": {},
@@ -1730,7 +1725,7 @@
     "creationTS": "2024-04-23T23:18:45.230Z",
     "GUID": "e3a919b8-9524-45c4-95cd-68f22bce881c",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-05-01T00:11:54.256Z",
+    "lastModifTS": "2024-05-01T00:37:38.090Z",
     "persistenceSchemaVersion": "7",
     "isCreatedByPlugin": true,
     "pluginInformation": {

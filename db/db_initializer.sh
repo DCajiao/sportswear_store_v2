@@ -97,7 +97,7 @@ db.createCollection("Compras", {
                         "bsonType": "object",
                         "properties": {
                             "producto_id": {
-                                "bsonType": "string"
+                                "bsonType": "objectId"
                             },
                             "personalizacion": {
                                 "bsonType": "object",
