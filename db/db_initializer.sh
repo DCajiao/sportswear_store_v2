@@ -291,7 +291,7 @@ db.createCollection("Lugares", {
                     "bsonType": "string"
                 },
                 "subLugar_id": {
-                    "bsonType": "number"
+                    "bsonType": "objectId"
                 }
             },
             "additionalProperties": false,

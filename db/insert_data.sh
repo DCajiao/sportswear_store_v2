@@ -5,7 +5,7 @@
 db.Lugares.insertOne({
     "_id": ObjectId(),
     "nombre": "Santiago de Cali",
-    "subLugar_id": 1
+    "subLugar_id": ObjectId()
 });
 
 // Insert data in the Personas collection

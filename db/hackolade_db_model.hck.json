@@ -689,16 +689,11 @@
                     "name": "subLugar_id",
                     "hackoladeMeta": {},
                     "isActivated": true,
-                    "type": "numeric",
+                    "type": "objectId",
+                    "error": {},
                     "GUID": "81e39f0e-c810-4538-94c4-4777d196aac3",
-                    "foreignCollection": "e889e610-5604-4e9e-9b80-758252bdd5d4",
-                    "foreignField": [
-                        "e889e610-5604-4e9e-9b80-758252bdd5d4",
-                        "559d6b56-7e97-440a-b0f6-1dc6472023d4"
-                    ],
-                    "relationshipType": "Foreign Key",
                     "parentRelationship": "6e99f9c1-19a4-464c-815e-f0b9e04feb62",
-                    "error": {}
+                    "relationshipType": "Foreign Key"
                 }
             ],
             "definitions": {
@@ -1725,14 +1720,14 @@
     "creationTS": "2024-04-23T23:18:45.230Z",
     "GUID": "e3a919b8-9524-45c4-95cd-68f22bce881c",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-05-04T12:52:05.722Z",
+    "lastModifTS": "2024-05-04T14:26:48.959Z",
     "persistenceSchemaVersion": "7",
     "isCreatedByPlugin": true,
     "pluginInformation": {
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "7.3.11"
+        "version": "7.3.10"
     },
     "hackoladeMeta": {
         "validationErrors": {
