@@ -666,7 +666,7 @@
                     "name": "_id",
                     "hackoladeMeta": {},
                     "isActivated": true,
-                    "type": "numeric",
+                    "type": "objectId",
                     "error": {},
                     "primaryKey": true,
                     "GUID": "559d6b56-7e97-440a-b0f6-1dc6472023d4",
@@ -1725,7 +1725,7 @@
     "creationTS": "2024-04-23T23:18:45.230Z",
     "GUID": "e3a919b8-9524-45c4-95cd-68f22bce881c",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-05-01T00:37:38.090Z",
+    "lastModifTS": "2024-05-04T12:52:05.722Z",
     "persistenceSchemaVersion": "7",
     "isCreatedByPlugin": true,
     "pluginInformation": {

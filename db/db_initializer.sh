@@ -285,7 +285,7 @@ db.createCollection("Lugares", {
             "title": "Lugares",
             "properties": {
                 "_id": {
-                    "bsonType": "number"
+                    "bsonType": "objectId"
                 },
                 "nombre": {
                     "bsonType": "string"
