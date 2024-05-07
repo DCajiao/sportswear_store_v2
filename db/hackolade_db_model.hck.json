@@ -961,8 +961,8 @@
             },
             "isActivated": true,
             "additionalProperties": false,
-            "validationLevel": "Off",
-            "validationAction": "Warn",
+            "validationLevel": "Moderate",
+            "validationAction": "Error",
             "storageEngineName": "WiredTiger",
             "collectionUsers": [],
             "indexes": [],
@@ -1720,14 +1720,14 @@
     "creationTS": "2024-04-23T23:18:45.230Z",
     "GUID": "e3a919b8-9524-45c4-95cd-68f22bce881c",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-05-04T14:26:48.959Z",
+    "lastModifTS": "2024-05-07T21:04:00.535Z",
     "persistenceSchemaVersion": "7",
     "isCreatedByPlugin": true,
     "pluginInformation": {
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "7.3.10"
+        "version": "7.3.11"
     },
     "hackoladeMeta": {
         "validationErrors": {

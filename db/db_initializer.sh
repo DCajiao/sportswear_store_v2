@@ -409,6 +409,14 @@ db.createCollection("Promociones", {
             ]
         }
     },
-    "validationLevel": "off",
-    "validationAction": "warn"
+    "validationLevel": "moderate",
+    "validationAction": "error"
 });
+
+// Index creation
+
+db.Personas.createIndex({ "correo": 1 }, { unique: true })
+
+db.Personas.createIndex({ "telefono": 1 }, { unique: true })
+
+db.Personas.createIndex({ "cuentas.usuario": 1 }, { unique: true })
