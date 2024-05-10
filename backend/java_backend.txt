@@ -1,3 +1,0 @@
-Este archivo es provisional, sirve sólo para crear la carpeta en github.
-Una vez agregado el contenido real para este directorio de Backend 
-este txt debe ser eliminado.
