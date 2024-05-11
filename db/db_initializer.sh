@@ -1,4 +1,4 @@
-use sportswear_store
+use sportswear_store;
 
 db.createCollection("Personas", {
     "capped": false,
@@ -85,7 +85,7 @@ db.createCollection("Compras", {
                     "bsonType": "string"
                 },
                 "costoTotal": {
-                    "bsonType": "number"
+                    "bsonType": "double"
                 },
                 "fechaCompra": {
                     "bsonType": "date"
@@ -150,7 +150,7 @@ db.createCollection("Productos", {
                     "bsonType": "objectId"
                 },
                 "precio": {
-                    "bsonType": "number"
+                    "bsonType": "double"
                 },
                 "imagenProducto": {
                     "bsonType": "string"
@@ -324,7 +324,7 @@ db.createCollection("Reseñas", {
                     "bsonType": "number"
                 },
                 "cuenta_usuario": {
-                    "bsonType": "objectId"
+                    "bsonType": "string"
                 },
                 "fecha": {
                     "bsonType": "date"
@@ -397,7 +397,7 @@ db.createCollection("Promociones", {
                     }
                 },
                 "descuento": {
-                    "bsonType": "number"
+                    "bsonType": "double"
                 }
             },
             "additionalProperties": false,

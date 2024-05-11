@@ -218,6 +218,7 @@
                     "type": "numeric",
                     "GUID": "93b208b1-c484-4595-ba6c-f62a387e13ee",
                     "required": true,
+                    "mode": "double",
                     "error": {}
                 },
                 {
@@ -370,6 +371,7 @@
                     "type": "numeric",
                     "GUID": "3be404bc-1aba-448a-80b6-0674161285b7",
                     "required": true,
+                    "mode": "double",
                     "error": {}
                 },
                 {
@@ -750,18 +752,11 @@
                     "name": "cuenta_usuario",
                     "hackoladeMeta": {},
                     "isActivated": true,
-                    "type": "objectId",
+                    "type": "string",
+                    "error": {},
                     "GUID": "f4312751-8aff-4fc6-9e89-6f46c8736b49",
-                    "foreignCollection": "cc72597a-12c6-4306-99c9-18cd35fd7653",
-                    "foreignField": [
-                        "cc72597a-12c6-4306-99c9-18cd35fd7653",
-                        "62fc2736-f9c9-485b-9912-b8142aa079dc",
-                        "178a3ece-4fa6-4920-94a5-927947fd8414",
-                        "d65f7de7-fc07-47e0-ac89-a6863af185a0"
-                    ],
-                    "relationshipType": "Foreign Key",
                     "parentRelationship": "a6613e3e-532b-427a-92ab-2b47e8853830",
-                    "error": {}
+                    "relationshipType": "Foreign Key"
                 },
                 {
                     "name": "fecha",
@@ -951,6 +946,7 @@
                     "type": "numeric",
                     "GUID": "704dfe2f-5921-4cbf-a139-905b4eea0e65",
                     "required": true,
+                    "mode": "double",
                     "error": {}
                 }
             ],
@@ -1720,7 +1716,7 @@
     "creationTS": "2024-04-23T23:18:45.230Z",
     "GUID": "e3a919b8-9524-45c4-95cd-68f22bce881c",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-05-07T21:04:00.535Z",
+    "lastModifTS": "2024-05-11T15:22:57.031Z",
     "persistenceSchemaVersion": "7",
     "isCreatedByPlugin": true,
     "pluginInformation": {
@@ -1809,7 +1805,7 @@
                     }
                 ],
                 "collapsedNodes": [],
-                "activeRelationship": "",
+                "activeRelationship": "bcb323ec-1951-4cd6-b60c-4a27b733753d",
                 "activeRelationshipFields": {
                     "childField": [],
                     "parentField": []
