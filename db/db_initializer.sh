@@ -56,7 +56,7 @@ db.createCollection("Personas", {
                     }
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "nombre",
@@ -124,7 +124,7 @@ db.createCollection("Compras", {
                     }
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "costoTotal",
@@ -218,7 +218,7 @@ db.createCollection("Productos", {
                     }
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "precio",
@@ -261,7 +261,7 @@ db.createCollection("Envios", {
                     "bsonType": "objectId"
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "direccion",
@@ -294,7 +294,7 @@ db.createCollection("Lugares", {
                     "bsonType": "objectId"
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "nombre"
             ]
@@ -333,14 +333,14 @@ db.createCollection("Reseñas", {
                     "bsonType": "objectId"
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "patternProperties": {
                 "replicas": {
                     "bsonType": "array",
                     "additionalItems": true,
                     "items": {
                         "bsonType": "object",
-                        "additionalProperties": false,
+                        "additionalProperties": true,
                         "patternProperties": {
                             "comentario": {
                                 "bsonType": "string"
