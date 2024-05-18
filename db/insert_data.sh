@@ -72,7 +72,10 @@ db.Reseñas.insertOne({
     "_id": ObjectId(),
     "comentario": "¡Excelente producto!",
     "valoracion": 5,
-    "cuenta_usuario": db.Personas.findOne({ "nombre": "Juan Pérez" })._id,
+    "cuenta_usuario": db.Personas.findOne(
+        { "nombre": "Juan Pérez" },
+        { "cuentas.usuario": 1, _id: 0 }
+    ).cuentas[0].usuario,
     "fecha": new Date(),
     "producto_id": db.Productos.findOne({ "descripcion": "Camiseta de algodón" })._id
 });
@@ -85,5 +88,5 @@ db.Promociones.insertOne({
     "productos": [{
         "producto_id": db.Productos.findOne({ "descripcion": "Camiseta de algodón" })._id
     }],
-    "descuento": 10 // 10% de descuento
+    "descuento": 0.10 // 10% de descuento
 });
