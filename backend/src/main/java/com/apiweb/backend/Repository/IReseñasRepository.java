@@ -3,7 +3,8 @@ package com.apiweb.backend.Repository;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.apiweb.backend.Model.ProductosModel;
+import com.apiweb.backend.Model.ReseñasModel;
 
-public interface IProductosRepository extends MongoRepository<ProductosModel, ObjectId>{
+public interface IReseñasRepository extends MongoRepository <ReseñasModel,ObjectId>{
+    
 }

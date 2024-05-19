@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.apiweb.backend.Model.Documents.EspecificacionesArticulo;
@@ -21,6 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class ProductosModel {
     @Id
     private ObjectId id;
@@ -28,9 +30,9 @@ public class ProductosModel {
     private String imagenProducto;
     private TipoProducto tipoProducto;
     private String descripcion;
-    private CategoriaArticulo CategoriaArticulo;
+    private CategoriaArticulo categoriaArticulo;
     private SeccionArticulo seccionArticulo;
     private Integer cantidadArticulo;
     private List<EspecificacionesArticulo> especificacionesArticulo = new ArrayList<>();
-    private List<ProductosPaquete> productosPaquetes = new ArrayList<>();
+    private List<ProductosPaquete> productosPaquete = new ArrayList<>();
 }
