@@ -1,24 +1,20 @@
-package com.apiweb.backend.Model.Documents;
-
+package com.apiweb.backend.Model;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.apiweb.backend.Model.ENUM.TipoCuenta;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Document
+@Document ("Lugares")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Cuentas {
+public class LugaresModel {
     @Id
-    private String usuario;
-    private TipoCuenta tipoCuenta;
-    private String contraseña;
+    private ObjectId id;
+    private String nombre;
+    private ObjectId subLugar_id;
 }

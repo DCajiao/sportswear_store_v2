@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.TypeAlias;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.apiweb.backend.Model.Documents.EspecificacionesArticulo;
@@ -19,7 +19,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Document("Productos")
-@TypeAlias("productos")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

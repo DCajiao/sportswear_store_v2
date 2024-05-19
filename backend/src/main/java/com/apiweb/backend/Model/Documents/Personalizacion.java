@@ -1,5 +1,6 @@
 package com.apiweb.backend.Model.Documents;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -10,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EspecificacionesArticulo {
-    private String talla;
-    private Integer cantidad;
+public class Personalizacion {
+    private String descripcion;
+    private ObjectId diseno_id;
 }

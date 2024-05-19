@@ -29,5 +29,5 @@ public class PersonasModel {
     private Integer edad;
     private ObjectId lugar_id;
     private List<Cuentas> cuentas = new ArrayList<>();
-
 }
+
