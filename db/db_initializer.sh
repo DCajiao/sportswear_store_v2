@@ -1,4 +1,4 @@
-use sportswear_store
+use sportswear_store;
 
 db.createCollection("Personas", {
     "capped": false,
@@ -56,7 +56,7 @@ db.createCollection("Personas", {
                     }
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "nombre",
@@ -85,7 +85,7 @@ db.createCollection("Compras", {
                     "bsonType": "string"
                 },
                 "costoTotal": {
-                    "bsonType": "number"
+                    "bsonType": "double"
                 },
                 "fechaCompra": {
                     "bsonType": "date"
@@ -124,7 +124,7 @@ db.createCollection("Compras", {
                     }
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "costoTotal",
@@ -150,7 +150,7 @@ db.createCollection("Productos", {
                     "bsonType": "objectId"
                 },
                 "precio": {
-                    "bsonType": "number"
+                    "bsonType": "double"
                 },
                 "imagenProducto": {
                     "bsonType": "string"
@@ -218,7 +218,7 @@ db.createCollection("Productos", {
                     }
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "precio",
@@ -261,7 +261,7 @@ db.createCollection("Envios", {
                     "bsonType": "objectId"
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "_id",
                 "direccion",
@@ -294,7 +294,7 @@ db.createCollection("Lugares", {
                     "bsonType": "objectId"
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "nombre"
             ]
@@ -324,7 +324,7 @@ db.createCollection("Reseñas", {
                     "bsonType": "number"
                 },
                 "cuenta_usuario": {
-                    "bsonType": "objectId"
+                    "bsonType": "string"
                 },
                 "fecha": {
                     "bsonType": "date"
@@ -333,14 +333,14 @@ db.createCollection("Reseñas", {
                     "bsonType": "objectId"
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "patternProperties": {
                 "replicas": {
                     "bsonType": "array",
                     "additionalItems": true,
                     "items": {
                         "bsonType": "object",
-                        "additionalProperties": false,
+                        "additionalProperties": true,
                         "patternProperties": {
                             "comentario": {
                                 "bsonType": "string"
@@ -397,7 +397,7 @@ db.createCollection("Promociones", {
                     }
                 },
                 "descuento": {
-                    "bsonType": "number"
+                    "bsonType": "double"
                 }
             },
             "additionalProperties": false,
@@ -409,6 +409,14 @@ db.createCollection("Promociones", {
             ]
         }
     },
-    "validationLevel": "off",
-    "validationAction": "warn"
+    "validationLevel": "moderate",
+    "validationAction": "error"
 });
+
+// Index creation
+
+db.Personas.createIndex({ "correo": 1 }, { unique: true })
+
+db.Personas.createIndex({ "telefono": 1 }, { unique: true })
+
+db.Personas.createIndex({ "cuentas.usuario": 1 }, { unique: true })
