@@ -26,6 +26,16 @@ def index():
     """
     return html
 
+# Keep alive endpoint
+@app.route('/KEEPALIVE')
+def mainpage():
+    msg= "<center><h1>If you can see this message, it means that the API is still alive.</h1></center>"
+    return msg
+
+# ----------------------------------------------------------------
+
+# API endpoints
+
 # 1. What is the top 10 places that have received the most shipments?
 @app.route('/top_10_places')
 def top_10_places():
@@ -263,12 +273,6 @@ def average_cost_by_section():
     df = mongoAtlas.aggregate_query_to_atlas(db, "Productos", query)
     return jsonify(df.to_dict(orient="records"))
 
-
-# ----------------------------------------------------------------
-@app.route('/KEEPALIVE')
-def mainpage():
-    msg= "<center><h1>If you can see this message, it means that the API is still alive.</h1></center>"
-    return msg
 # ----------------------------------------------------------------
 
 if __name__ == '__main__': 
