@@ -6,6 +6,26 @@ import mongoAtlas_client as mongoAtlas
 app = Flask(__name__)
 #----------------------------------------------------------------
 
+# General information about the API
+@app.route('/')
+def index():
+    html = """
+    <center><h1>Welcome to the Sportswear Store Data Analytics API!</h1></center>
+    <br>
+    <center><h2>Click on the links below to access the API endpoints</h2></center>
+    <br>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_10_places">/top_10_places</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_purchases_by_date">/top_purchases_by_date</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/sales_by_section">/sales_by_section</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/products_by_type">/products_by_type</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_3_expensive_products">/top_3_expensive_products</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/sales_by_month">/sales_by_month</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/average_client_age">/average_client_age</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_10_expensive_clients">/top_10_expensive_clients</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/average_cost_by_section">/average_cost_by_section</a></h3></center>
+    """
+    return html
+
 # 1. What is the top 10 places that have received the most shipments?
 @app.route('/top_10_places')
 def top_10_places():
