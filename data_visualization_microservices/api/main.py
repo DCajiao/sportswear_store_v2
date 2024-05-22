@@ -151,7 +151,7 @@ def products_by_type():
         },
         {
             "$match": {
-                "_id": { "$in": ["Articulo", "Diseno"] }
+                "_id": { "$in": ["Articulo", "Diseno", "Paquete"] }
             }
         }
     ]
