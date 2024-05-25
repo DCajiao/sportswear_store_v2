@@ -106,7 +106,10 @@ def top_3_purchases_by_date():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
-    return jsonify(df.to_dict(orient="records"))
+    # Create a bar plot
+    image = plotter.bars_plot(df, "Date", "Total purchases", "Top 3 dates with the most purchases", ["fecha", "totalCompras"])
+    # Return the image
+    return send_file(image, mimetype='image/png')
 
 # 3. How many sales have been made for each section?
 @app.route('/sales_by_section')
@@ -140,7 +143,8 @@ def sales_by_section():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
-    return jsonify(df.to_dict(orient="records"))
+    image = plotter.bars_plot(df, "Section", "Total sales", "Top 3 sections with the most sales", ["seccion", "totalVentas"])
+    return send_file(image, mimetype='image/png')
 
 # 4. How many item type products and how many design type products does the store have?
 @app.route('/products_by_type')
@@ -160,7 +164,8 @@ def products_by_type():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Productos", query)
-    return jsonify(df.to_dict(orient="records"))
+    image = plotter.pie_plot(df, "Products by type", ["cantidad","_id"])
+    return send_file(image, mimetype='image/png')
 
 # 5. What are the 3 most expensive products?
 @app.route('/top_3_expensive_products')
@@ -171,7 +176,8 @@ def top_3_expensive_products():
     sort = [("precio", -1)]
     limit = 3
     df = mongoAtlas.find_query_to_atlas(db, "Productos", query, projection, sort, limit)
-    return jsonify(df.to_dict(orient="records"))
+    image = plotter.bars_plot(df, "Product", "Price", "Top 3 most expensive products", ["descripcion", "precio"])
+    return send_file(image, mimetype='image/png')
 
 # 6. What is the total amount of sales per month for each year?
 @app.route('/sales_by_month')
@@ -200,7 +206,8 @@ def sales_by_month():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
-    return jsonify(df.to_dict(orient="records"))
+    image = plotter.timeline_plot(df, "Date", "Total sales", "Total sales per month for each year", ['month','totalVentas','year'])
+    return send_file(image, mimetype='image/png')
 
 # 7. What is the average age of clients by gender?
 @app.route('/average_client_age')
@@ -215,7 +222,8 @@ def average_client_age():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Personas", query)
-    return jsonify(df.to_dict(orient="records"))
+    image = plotter.pie_plot(df,"Average age",["promedioEdad","_id"])
+    return send_file(image, mimetype='image/png')
 
 # 8. Which 10 customers have made the most expensive purchases in terms of total cost?
 @app.route('/top_10_expensive_clients')
@@ -250,7 +258,8 @@ def top_10_expensive_clients():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
-    return jsonify(df.to_dict(orient="records"))
+    image = plotter.bars_plot(df, "Client", "Total cost", "Top 10 clients with the most expensive purchases", ["nombre", "costoTotal"])
+    return send_file(image, mimetype='image/png')
 
 # 9. What is the average cost of the items in each section (Hombre/Mujer/Nino)?
 @app.route('/average_cost_by_section')
@@ -275,7 +284,8 @@ def average_cost_by_section():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Productos", query)
-    return jsonify(df.to_dict(orient="records"))
+    image = plotter.bars_plot(df, "Section", "Average cost", "Average cost of items in each section", ["seccion", "promedioCosto"])
+    return send_file(image, mimetype='image/png')
 
 # ----------------------------------------------------------------
 
