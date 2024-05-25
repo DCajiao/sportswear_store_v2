@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, send_file
 
 import mongoAtlas_client as mongoAtlas
+import plotter
 
 #----------------------------------------------------------------
 app = Flask(__name__)
@@ -74,7 +75,10 @@ def top_10_places():
     ]
     # Execute aggregation query
     df = mongoAtlas.aggregate_query_to_atlas(db, "Envios", query)
-    return jsonify(df.to_dict(orient="records"))
+    # Create a bar plot
+    image = plotter.bars_plot(df, "Place", "Total shipments", "Top 10 places with the most shipments", ["lugar", "totalEnvios"])
+    # Return the image
+    return send_file(image, mimetype='image/png')
 
 # 2. What are the 3 dates on which the most purchases have been made?
 @app.route('/top_purchases_by_date')
