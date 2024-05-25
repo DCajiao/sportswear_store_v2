@@ -37,7 +37,7 @@ db.createCollection("Personas", {
                     "additionalItems": true,
                     "items": {
                         "bsonType": "object",
-                        "additionalProperties": false,
+                        "additionalProperties": true,
                         "patternProperties": {
                             "contraseña": {
                                 "bsonType": "string"
@@ -101,7 +101,7 @@ db.createCollection("Compras", {
                             },
                             "personalizacion": {
                                 "bsonType": "object",
-                                "additionalProperties": false,
+                                "additionalProperties": true,
                                 "patternProperties": {
                                     "descripcion ": {
                                         "bsonType": "string"
@@ -112,7 +112,7 @@ db.createCollection("Compras", {
                                 }
                             }
                         },
-                        "additionalProperties": false,
+                        "additionalProperties": true,
                         "patternProperties": {
                             "cantidad": {
                                 "bsonType": "number"
@@ -193,7 +193,7 @@ db.createCollection("Productos", {
                     "additionalItems": true,
                     "items": {
                         "bsonType": "object",
-                        "additionalProperties": false,
+                        "additionalProperties": true,
                         "patternProperties": {
                             "cantidad": {
                                 "bsonType": "number"
@@ -209,7 +209,7 @@ db.createCollection("Productos", {
                     "additionalItems": true,
                     "items": {
                         "bsonType": "object",
-                        "additionalProperties": false,
+                        "additionalProperties": true,
                         "patternProperties": {
                             "producto_id": {
                                 "bsonType": "objectId"
@@ -388,7 +388,7 @@ db.createCollection("Promociones", {
                     "additionalItems": true,
                     "items": {
                         "bsonType": "object",
-                        "additionalProperties": false,
+                        "additionalProperties": true,
                         "patternProperties": {
                             "producto_id": {
                                 "bsonType": "objectId"
@@ -400,7 +400,7 @@ db.createCollection("Promociones", {
                     "bsonType": "double"
                 }
             },
-            "additionalProperties": false,
+            "additionalProperties": true,
             "required": [
                 "fechaInicio",
                 "fechaFin",
