@@ -15,7 +15,7 @@ def index():
     <br>
     <center><h2>Click on the links below to access the API endpoints</h2></center>
     <br>
-    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_10_places">/top_10_places</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_places">/top_places</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_purchases_by_date">/top_purchases_by_date</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/sales_by_section">/sales_by_section</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/products_by_type">/products_by_type</a></h3></center>
@@ -37,8 +37,8 @@ def mainpage():
 
 # API endpoints
 
-# 1. What is the top 10 places that have received the most shipments?
-@app.route('/top_10_places')
+# 1. Which locations have received the most shipments?
+@app.route('/top_places')
 def top_10_places():
     db = mongoAtlas.connect_to_mongodb_atlas()
     query = [
@@ -63,7 +63,7 @@ def top_10_places():
             "$sort": { "totalEnvios": -1 }
         },
         {
-            "$limit": 10
+            "$limit": 3
         },
         {
             "$project": {
@@ -76,7 +76,7 @@ def top_10_places():
     # Execute aggregation query
     df = mongoAtlas.aggregate_query_to_atlas(db, "Envios", query)
     # Create a bar plot
-    image = plotter.bars_plot(df, "Place", "Total shipments", "Top 10 places with the most shipments", ["lugar", "totalEnvios"])
+    image = plotter.bars_plot(df, "Place", "Total shipments", "Top sales quantities per location", ["lugar", "totalEnvios"])
     # Return the image
     return send_file(image, mimetype='image/png')
 
@@ -107,7 +107,7 @@ def top_3_purchases_by_date():
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
     # Create a bar plot
-    image = plotter.bars_plot(df, "Date", "Total purchases", "Top 3 dates with the most purchases", ["fecha", "totalCompras"])
+    image = plotter.bars_plot(df, "Date", "Total purchases", "Top sales quantities by date", ["fecha", "totalCompras"])
     # Return the image
     return send_file(image, mimetype='image/png')
 
@@ -143,10 +143,10 @@ def sales_by_section():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
-    image = plotter.bars_plot(df, "Section", "Total sales", "Top 3 sections with the most sales", ["seccion", "totalVentas"])
+    image = plotter.bars_plot(df, "Section", "Total sales", "Top sales quantities per section", ["seccion", "totalVentas"])
     return send_file(image, mimetype='image/png')
 
-# 4. How many item type products and how many design type products does the store have?
+# 4. How many of each type of product does the store have?
 @app.route('/products_by_type')
 def products_by_type():
     db = mongoAtlas.connect_to_mongodb_atlas()
@@ -164,11 +164,11 @@ def products_by_type():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Productos", query)
-    image = plotter.pie_plot(df, "Products by type", ["cantidad","_id"])
+    image = plotter.pie_plot(df, "Quantity of each type of product", ["cantidad","_id"])
     return send_file(image, mimetype='image/png')
 
 # 5. What are the 3 most expensive products?
-@app.route('/top_3_expensive_products')
+@app.route('/top_expensive_products')
 def top_3_expensive_products():
     db = mongoAtlas.connect_to_mongodb_atlas()
     query = { "tipoProducto": "Articulo" }
@@ -176,7 +176,7 @@ def top_3_expensive_products():
     sort = [("precio", -1)]
     limit = 3
     df = mongoAtlas.find_query_to_atlas(db, "Productos", query, projection, sort, limit)
-    image = plotter.bars_plot(df, "Product", "Price", "Top 3 most expensive products", ["descripcion", "precio"])
+    image = plotter.bars_plot(df, "Product", "Price", "Top most expensive products", ["descripcion", "precio"])
     return send_file(image, mimetype='image/png')
 
 # 6. What is the total amount of sales per month for each year?
@@ -206,7 +206,7 @@ def sales_by_month():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
-    image = plotter.timeline_plot(df, "Date", "Total sales", "Total sales per month for each year", ['month','totalVentas','year'])
+    image = plotter.timeline_plot(df, "Date", "Total sales", "Amount sold in each month and year", ['month','totalVentas','year'])
     return send_file(image, mimetype='image/png')
 
 # 7. What is the average age of clients by gender?
@@ -222,7 +222,7 @@ def average_client_age():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Personas", query)
-    image = plotter.pie_plot(df,"Average age",["promedioEdad","_id"])
+    image = plotter.pie_plot(df,"Average age of clients by gender",["promedioEdad","_id"])
     return send_file(image, mimetype='image/png')
 
 # 8. Which 10 customers have made the most expensive purchases in terms of total cost?
@@ -258,7 +258,7 @@ def top_10_expensive_clients():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Compras", query)
-    image = plotter.bars_plot(df, "Client", "Total cost", "Top 10 clients with the most expensive purchases", ["nombre", "costoTotal"])
+    image = plotter.bars_plot(df, "Client", "Total cost", "Top 10 purchases with the highest total amount per client", ["nombre", "costoTotal"])
     return send_file(image, mimetype='image/png')
 
 # 9. What is the average cost of the items in each section (Hombre/Mujer/Nino)?
