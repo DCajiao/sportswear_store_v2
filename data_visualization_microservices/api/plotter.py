@@ -95,17 +95,6 @@ def timeline_plot(df, xlabel, ylabel, title, columns):
     plt.grid(True) 
     plt.xticks(rotation=45)  
     
-    # Adding value labels at each point on the graph and vertical lines with annotations
-    for i, row in df.iterrows():
-        plt.text(row['date'], row[columns[1]], f'{row[columns[1]]:.2f}', ha='center', va='bottom', fontsize=10)
-        plt.axvline(x=row['date'], color='gray', linestyle='--', linewidth=0.5)
-        plt.annotate(f'{row["date"].strftime("%Y-%m")}', 
-                    xy=(row['date'], row[columns[1]]),
-                    xytext=(row['date'], row[columns[1]] + 50),  # Move the text up a little bit
-                    ha='center', 
-                    arrowprops=dict(facecolor='black', arrowstyle='->'),
-                    fontsize=10)
-
     img_buffer = io.BytesIO()
     plt.savefig(img_buffer, format='png')
     img_buffer.seek(0)
