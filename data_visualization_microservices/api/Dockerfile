@@ -7,7 +7,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py .
-COPY mongodb_client.py .
+COPY mongoAtlas_client.py .
 COPY plotter.py .
 
 RUN chmod +x main.py
