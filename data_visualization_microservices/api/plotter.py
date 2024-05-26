@@ -87,7 +87,7 @@ def timeline_plot(df, xlabel, ylabel, title, columns):
     
     df['date'] = pd.to_datetime(df[[columns[2], columns[0]]].assign(day=1)) # Create a date column by combining year and month
     df = df.sort_values(by='date')
-    plt.figure(figsize=(12, 12))
+    plt.figure(figsize=(12, 8))
     plt.plot(df['date'], df[columns[1]], marker='o', linestyle='-', color='b')  
     plt.xlabel(xlabel) 
     plt.ylabel(ylabel)  
