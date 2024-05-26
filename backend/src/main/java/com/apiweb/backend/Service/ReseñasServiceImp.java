@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.apiweb.backend.Exception.RecursoNoEncontradoException;
-import com.apiweb.backend.Model.PersonasModel;
 import com.apiweb.backend.Model.ProductosModel;
 import com.apiweb.backend.Model.ReseñasModel;
-import com.apiweb.backend.Model.Documents.ReplicasReseñas;
 import com.apiweb.backend.Repository.IPersonasRepository;
 import com.apiweb.backend.Repository.IProductosRepository;
 import com.apiweb.backend.Repository.IReseñasRepository;
@@ -34,12 +32,12 @@ public class ReseñasServiceImp implements IReseñaService{
             return "¡ERROR! el producto con el ID "+reseña.getProducto_id()+" no se encuentra en la BD";
         }
         
-        for (ReplicasReseñas replica : reseña.getReplicas()) {
-            Optional<PersonasModel> usuarioReplica = personasRepository.findByCuentasUsuario(replica.getCuenta_Usuario());
-            if (usuarioReplica.isEmpty()) {
-                return "¡ERROR! El usuario que se intenta ingresar no se encuentra en la BD";
-            }
-        }
+        //for (ReplicasReseñas replica : reseña.getReplicas()) {
+            //Optional<PersonasModel> usuarioReplica = personasRepository.findByCuentasUsuario(replica.getCuenta_Usuario());
+            //if (usuarioReplica.isEmpty()) {
+                //return "¡ERROR! El usuario que se intenta ingresar no se encuentra en la BD";
+            //}
+        //}
         reseñasRepository.save(reseña);
         return "La reseña del producto con id "+reseña.getProducto_id()+" hecha por el usuario "+reseña.getCuenta_usuario()+" fue creada con exito";
     }
