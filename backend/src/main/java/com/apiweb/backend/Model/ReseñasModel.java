@@ -25,7 +25,7 @@ public class ReseñasModel {
     @Id
     private ObjectId id;
     private String comentario;
-    private Float valoracion;
+    private Double valoracion;
     private String cuenta_usuario;
     private Date fecha;
     private ObjectId producto_id;
