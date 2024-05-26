@@ -6,7 +6,6 @@
 // - Validate if product_id exists and Product_type is Item or Package
 // - Validate product availability
 // - Validate if design_id exists
-// - Take date automatically
 // - Validate product availability
 // - Update new product quantities available per size
 // - Calculate TotalCost considering active promotions
@@ -79,11 +78,8 @@ exports = async function (changeEvent) {
 
             compra.costoTotal = costoTotal;
 
-            // Tomar la fecha automáticamente
-            compra.fechaCompra = new Date();
-
             // Actualizar la compra con los datos calculados
-            await comprasCollection.updateOne({ "_id": docId }, { "$set": { "costoTotal": costoTotal, "fechaCompra": compra.fechaCompra } });
+            await comprasCollection.updateOne({ "_id": docId }, { "$set": { "costoTotal": costoTotal} });
 
             // Actualizar nuevas cantidades de productos disponibles por talla y recalcular cantidadArticulo
             for (const detalle of compra.detallesCompra) {
