@@ -20,7 +20,7 @@
 			<nav>
 				<ul>
 					<li><a href="#intro">inicio</a></li>
-					<li><a href="#one">Acerca de </a></li>
+					<li><a href="#one">¿Cómo funciona este servicio de Analítica? </a></li>
 					<li><a href="#two">Gráficas en tiempo real</a></li>
 					<li><a href="#three">Seleccionar Envío</a></li>
 					<li><a href="#four">Confirmación</a></li>
@@ -54,17 +54,23 @@
 					style="width: 600px; height: 400px;" />
 				<div class="content">
 					<div class="inner">
-						<h2>Inicia tu compra</h2>
-						<p>Para inicializar tu proceso de compra presiona el siguiente botón</p>
+						<h2>¿Cómo funciona este servicio de Analítica?</h2>
+						<ol>
+							<li>Los datos se crean desde el servicio de la tienda (Backend en Java).</li>
+							<li>Los datos de la tienda son almacenados en MongoDB Atlas.</li>
+							<li>Los datos son consultados por la API de analítica a MongoDB Atlas.</li>
+							<li>Se crean visualizaciones con los datos obtenidos.</li>
+							<li>Esas visualizaciones son consultadas e insertadas al Frontend</li>
+						</ol>
 						<ul class="actions">
-							<button id="iniciarCompraBtn">Iniciar</button>
+							<li><a href="#two" class="button scrolly"
+									style="background-color: rgba(162, 0, 255, 0.623);">Veamos las gráficas</a></li>
 						</ul>
-						<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 					</div>
 				</div>
 
 			</section>
-			<br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br>
 		</section>
 		<br>
 		<!-- Two -->
@@ -80,7 +86,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>. ¿Qué lugares han recibido más envíos?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button id="iniciarCompraBtn">Iniciar</button>
@@ -95,7 +101,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>1. ¿Qué lugares han recibido más envíos?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>{
 								"$group": {<br>
 								"_id": "$lugar_id",<br>
@@ -126,7 +132,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>2. ¿Cuáles son las 3 fechas en las que se han realizado más compras?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>{
 								"$group": {<br>
 								"_id": { "$dateToString": { "format": "%Y-%m-%d", "date": "$fechaCompra" }},<br>
@@ -150,7 +156,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>3. ¿Cuántas ventas se han realizado por cada sección?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta3')">Cargar Gráfica</button>
@@ -165,7 +171,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>4. ¿Cuántos productos de cada tipo tiene la tienda?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta4')">Cargar Gráfica</button>
@@ -181,7 +187,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>5. ¿Cuáles son los 3 productos más caros?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta5')">Cargar Gráfica</button>
@@ -196,7 +202,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>6. ¿Cuál es el monto total de ventas por mes para cada año?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta6')">Cargar Gráfica</button>
@@ -211,7 +217,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>7. ¿Cuál es la edad promedio de los clientes por sexo?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta7')">Cargar Gráfica</button>
@@ -227,7 +233,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>8. ¿Qué clientes han realizado las 10 compras más caras en términos de costo total?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta8')">Cargar Gráfica</button>
@@ -243,7 +249,7 @@
 					<div class="content">
 						<div class="inner">
 							<h3>9. ¿Cuál es el coste medio de los artículos de cada sección (Hombre/Mujer/Nino)?</h3>
-							<p>¿Cómo se obtuvieron estos datos?</p>
+							<p>Con este query se obtuvieron los datos:</p>
 							<blockquote>Crea un POST a tabla compra para generar un registro</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta9')">Cargar Gráfica</button>
