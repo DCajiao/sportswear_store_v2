@@ -8,6 +8,10 @@
 
 *[Juan Andres Lopez Alvarez](https://github.com/DCajiao)*
 
+## Link to Documentation
+
+*[Notion Page](https://dcajiao.notion.site/Sustentaci-n-3-Proyecto-Sportswear-Store-NoSQL-ac51f9ef56674da5aad8f5c38eb11f78?pvs=4)*
+
 ## Links to services
 
 *[Data Analysis API](https://sportswear-store-data-analysis-api.onrender.com)*
