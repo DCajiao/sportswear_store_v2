@@ -222,7 +222,7 @@ def average_client_age():
         }
     ]
     df = mongoAtlas.aggregate_query_to_atlas(db, "Personas", query)
-    image = plotter.pie_plot(df,"Average age of clients by gender",["promedioEdad","_id"])
+    image = plotter.bars_plot(df,"Genders","Average age","Average age of clients by gender",["promedioEdad","_id"])
     return send_file(image, mimetype='image/png')
 
 # 8. Which 10 customers have made the most expensive purchases in terms of total cost?
