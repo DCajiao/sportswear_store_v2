@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.apiweb.backend.Exception.RecursoNoEncontradoException;
 import com.apiweb.backend.Model.ProductosModel;
 import com.apiweb.backend.Model.ReseñasModel;
+import com.apiweb.backend.Model.Documents.ReplicasReseñas;
 import com.apiweb.backend.Repository.IPersonasRepository;
 import com.apiweb.backend.Repository.IProductosRepository;
 import com.apiweb.backend.Repository.IReseñasRepository;
@@ -23,7 +24,7 @@ public class ReseñasServiceImp implements IReseñaService{
 
     @Override
     public String guardarReseña(ReseñasModel reseña) {
-       ObjectId usuario = personasRepository.validarUsuario(reseña.getCuenta_usuario());
+       Optional<ObjectId> usuario = personasRepository.validarUsuario(reseña.getCuenta_usuario());
         if (usuario == null) {
             return "¡ERROR! El usuario "+reseña.getCuenta_usuario()+" no se encuentra en la BD";
         }
@@ -34,7 +35,7 @@ public class ReseñasServiceImp implements IReseñaService{
         }
         
         for (ReplicasReseñas replica : reseña.getReplicas()) {
-            ObjectId usuarioReplica = personasRepository.validarUsuario(replica.getCuenta_Usuario());
+            Optional<ObjectId> usuarioReplica = personasRepository.validarUsuario(replica.getCuenta_Usuario());
             if (usuarioReplica == null) {
                 return "¡ERROR! uno o varios de los usuarios que se intentan ingresar no se encuentran en la BD";
             }
