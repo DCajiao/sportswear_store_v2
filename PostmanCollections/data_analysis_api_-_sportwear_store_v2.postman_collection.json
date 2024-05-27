@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "2f040276-7acc-43a7-827a-cb86b80d0e10",
+		"name": "data_analysis_api_-_sportwear_store_v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29656648"
+	},
+	"item": [
+		{
+			"name": "Top_lugar_más_envíos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/top_places"
+			},
+			"response": []
+		},
+		{
+			"name": "Top_compras_por_fecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/top_purchases_by_date"
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas_por_sección",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/sales_by_section"
+			},
+			"response": []
+		},
+		{
+			"name": "Cantidad_productos_por_tipo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/products_by_type"
+			},
+			"response": []
+		},
+		{
+			"name": "Top_productos_más_caros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/top_expensive_products"
+			},
+			"response": []
+		},
+		{
+			"name": "Ventas_al_mes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/sales_by_month"
+			},
+			"response": []
+		},
+		{
+			"name": "Promedio_Edad_por_genero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/average_client_age"
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes_con_mayor_compra",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/top_10_expensive_clients"
+			},
+			"response": []
+		},
+		{
+			"name": "Promedio_costo_por_seccion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://sportswear-store-data-analysis-api.onrender.com/average_cost_by_section"
+			},
+			"response": []
+		}
+	]
+}
