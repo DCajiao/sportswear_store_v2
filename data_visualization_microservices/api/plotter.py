@@ -18,7 +18,7 @@ def bars_plot(df, xlabel, ylabel, title, columns):
     BytesIO: A bytes buffer containing the image of the plot in PNG format.
     """
     
-    colors = plt.cm.Paired(np.linspace(0, 1, len(df)))
+    colors = plt.cm.Pastel1(np.linspace(0, 1, len(df)))
     plt.figure(figsize=(12, 12)) 
     bars = plt.bar(df[columns[0]], df[columns[1]], color=colors)
     plt.xlabel(xlabel)
@@ -58,7 +58,7 @@ def pie_plot(df, title, column):
     """
     
     plt.figure(figsize=(12, 12)) 
-    colors = plt.cm.Paired(np.linspace(0, 1, len(df)))
+    colors = plt.cm.Pastel1(np.linspace(0, 1, len(df)))
     plt.pie(df[column[0]], labels=df[column[0]], autopct='%1.1f%%', startangle=140, colors=colors, textprops={'fontsize': 14}) # Create the pie chart
     plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     plt.title(title, fontsize=20)
