@@ -50,7 +50,8 @@
 		<section id="one" class="wrapper style1 spotlights">
 			<section>
 				<img src="https://raw.githubusercontent.com/DCajiao/sportswear_store_v2/main/diagrams/architecture.png"
-					alt="" data-position="center center" class="image" style="width: 650px; height: 400px;" />
+					alt="Diagrama de Arquitectura" data-position="center center" class="image"
+					style="width: 650px; height: 400px;" />
 				<div class="content">
 					<div class="inner">
 						<h2>¿Cómo funciona este servicio de Analítica?</h2>
@@ -63,7 +64,8 @@
 						</ol>
 						<ul class="actions">
 							<li><a href="#two" class="button scrolly"
-									style="background-color: rgba(162, 0, 255, 0.623);">¿Cómo acceder a las visualizaciones?</a></li>
+									style="background-color: rgba(162, 0, 255, 0.623);">¿Cómo acceder a las
+									visualizaciones?</a></li>
 						</ul>
 						<br><br><br>
 					</div>
@@ -82,14 +84,14 @@
 				</h2>
 				<section>
 					<div>
-						<img src="images/bolsa-de-la-compra.png" alt=""
-							data-position="center center" class="image" style="width: 200px; height: 200px;" />
-						<img src="images/visualizacion-de-datos.png" alt=""
-							data-position="center center" class="image" style="width: 200px; height: 200px;" />
-						<img src="images/api.png" alt=""
-							data-position="center center" class="image" style="width: 200px; height: 200px;" />
-						<img src="images/servidor-caido.png" alt=""
-							data-position="center center" class="image" style="width: 200px; height: 200px;" />
+						<img src="images/bolsa-de-la-compra.png" alt="" data-position="center center" class="image"
+							style="width: 200px; height: 200px;" />
+						<img src="images/visualizacion-de-datos.png" alt="" data-position="center center" class="image"
+							style="width: 200px; height: 200px;" />
+						<img src="images/api.png" alt="" data-position="center center" class="image"
+							style="width: 200px; height: 200px;" />
+						<img src="images/servidor-caido.png" alt="" data-position="center center" class="image"
+							style="width: 200px; height: 200px;" />
 					</div>
 					<div class="content">
 						<div class="inner">
@@ -98,7 +100,8 @@
 								sus respectivas gráficas y querys con el que se obtuvo esa información directamente
 								desde MongoDB Atlas.</p>
 							<p>La API tiene una cuota de recepción de peticiones relativamente pequeña, debido a todas
-								las funciones que debe ejecutar para crear cada gráfica, de manera que debes usar el botón para recargar las gráficas una por una</p>
+								las funciones que debe ejecutar para crear cada gráfica, de manera que debes usar el
+								botón para recargar las gráficas una por una</p>
 							<ul class="actions">
 								<li><a href="#three" class="button scrolly"
 										style="background-color: rgba(162, 0, 255, 0.623);">Veamos las gráficas</a></li>
@@ -119,11 +122,12 @@
 				<h2>
 					<center>Gráficas en tiempo real</center>
 				</h2>
-				
+
 				<br>
 				<section id="pregunta1"> <!-- Pregunta 1-->
-					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/top_places" alt=""
-						data-position="center center" class="image" style="width: 690px; height: 690px;" />
+					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/top_places"
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>1. ¿Qué lugares han recibido más envíos?</h3>
@@ -154,7 +158,8 @@
 				<br>
 				<section id="pregunta2"> <!-- Pregunta 2-->
 					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/top_purchases_by_date"
-						alt="" data-position="center center" class="image" style="width: 690px; height: 690px;" />
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>2. ¿Cuáles son las 3 fechas en las que se han realizado más compras?</h3>
@@ -178,12 +183,28 @@
 				<br>
 				<section id="pregunta3"> <!-- Pregunta 3-->
 					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/sales_by_section"
-						alt="" data-position="center center" class="image" style="width: 690px; height: 690px;" />
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>3. ¿Cuántas ventas se han realizado por cada sección?</h3>
 							<p>Con este query se obtuvieron los datos:</p>
-							<blockquote>PENDIENTE: Pegar el query</blockquote>
+							<blockquote>{"$unwind": "$detallesCompra" },<br><br>
+								{"$lookup": {<br>
+								"from": "Productos",<br>
+								"localField": "detallesCompra.producto_id",<br>
+								"foreignField": "_id",<br>
+								"as": "producto"}},<br><br>
+								{ "$unwind": "$producto" },<br><br>
+								{"$group": {<br>
+								"_id": "$producto.seccionArticulo",<br>
+								"totalVentas": { "$sum": 1 }}},<br><br>
+								{ "$sort": { "totalVentas": -1 } },<br><br>
+								{ "$limit": 3 },<br><br>
+								{"$project": {<br>
+								"_id": 0,<br>
+								"seccion": "$_id",<br>
+								"totalVentas": 1}}</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta3')">Cargar Gráfica</button>
 							</ul>
@@ -193,12 +214,17 @@
 				<br>
 				<section id="pregunta4"> <!-- Pregunta 4-->
 					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/products_by_type"
-						alt="" data-position="center center" class="image" style="width: 690px; height: 690px;" />
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>4. ¿Cuántos productos de cada tipo tiene la tienda?</h3>
 							<p>Con este query se obtuvieron los datos:</p>
-							<blockquote>PENDIENTE: Pegar el query</blockquote>
+							<blockquote>{"$group": {<br>
+								"_id": "$tipoProducto",<br>
+								"cantidad": { "$sum": 1 }}},<br><br>
+								{"$match": {<br>
+								"_id": { "$in": ["Articulo", "Diseno", "Paquete"]}}}</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta4')">Cargar Gráfica</button>
 							</ul>
@@ -209,12 +235,14 @@
 				<section id="pregunta5"> <!-- Pregunta 5-->
 					<img src=""
 						data-src="https://sportswear-store-data-analysis-api.onrender.com/top_3_expensive_products"
-						alt="" data-position="center center" class="image" style="width: 690px; height: 690px;" />
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>5. ¿Cuáles son los 3 productos más caros?</h3>
 							<p>Con este query se obtuvieron los datos:</p>
-							<blockquote>PENDIENTE: Pegar el query</blockquote>
+							<blockquote>db.Productos.find({},<br> { _id: 0, descripcion: 1, precio: 1 })<br>.sort({
+								precio: -1 }).limit(3)</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta5')">Cargar Gráfica</button>
 							</ul>
@@ -223,13 +251,24 @@
 				</section>
 				<br>
 				<section id="pregunta6"> <!-- Pregunta 6-->
-					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/sales_by_month" alt=""
-						data-position="center center" class="image" style="width: 710px; height: 600px;" />
+					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/sales_by_month"
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 710px; height: 600px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>6. ¿Cuál es el monto total de ventas por mes para cada año?</h3>
 							<p>Con este query se obtuvieron los datos:</p>
-							<blockquote>PENDIENTE: Pegar el query</blockquote>
+							<blockquote>{"$group": {<br>
+								"_id": {<br>
+								"year": { "$year": "$fechaCompra" },<br>
+								"month": { "$month": "$fechaCompra" }},<br>
+								"totalgeneradoVentas": { "$sum": "$costoTotal" }}},<br<br>>
+									{"$sort": { "_id.year": 1, "_id.month": 1 }},<br><br>
+									{"$project": {<br>
+									"_id": 0,<br>
+									"year": "$_id.year",<br>
+									"month": "$_id.month",<br>
+									"totalVentas": "$totalgeneradoVentas"}}</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta6')">Cargar Gráfica</button>
 							</ul>
@@ -239,12 +278,15 @@
 				<br>
 				<section id="pregunta7"> <!-- Pregunta 7-->
 					<img src="" data-src="https://sportswear-store-data-analysis-api.onrender.com/average_client_age"
-						alt="" data-position="center center" class="image" style="width: 690px; height: 690px;" />
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>7. ¿Cuál es la edad promedio de los clientes por sexo?</h3>
 							<p>Con este query se obtuvieron los datos:</p>
-							<blockquote>PENDIENTE: Pegar el query</blockquote>
+							<blockquote>"$group": {<br>
+								"_id": "$genero",<br>
+								"promedioEdad": { "$avg": "$edad" }}</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta7')">Cargar Gráfica</button>
 							</ul>
@@ -255,12 +297,26 @@
 				<section id="pregunta8"> <!-- Pregunta 8-->
 					<img src=""
 						data-src="https://sportswear-store-data-analysis-api.onrender.com/top_10_expensive_clients"
-						alt="" data-position="center center" class="image" style="width: 690px; height: 690px;" />
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>8. ¿Qué clientes han realizado las 10 compras más caras en términos de costo total?</h3>
 							<p>Con este query se obtuvieron los datos:</p>
-							<blockquote>PENDIENTE: Pegar el query</blockquote>
+							<blockquote>{"$sort": { "costoTotal": -1 }},<br><br>
+								{"$limit": 10},<br><br>
+								{"$lookup": {<br>
+								"from": "Personas",<br>
+								"localField": "cuenta_usuario",<br>
+								"foreignField": "cuentas.usuario",<br>
+								"as": "cliente"}},<br><br>
+								{"$unwind": "$cliente"},<br><br>
+								{"$project": {<br>
+								"_id": 0,<br>
+								"nombre": "$cliente.nombre",<br>
+								"correo": "$cliente.correo",<br>
+								"telefono": "$cliente.telefono",<br>
+								"costoTotal": 1}}</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta8')">Cargar Gráfica</button>
 							</ul>
@@ -271,12 +327,20 @@
 				<section id="pregunta9"> <!-- Pregunta 9-->
 					<img src=""
 						data-src="https://sportswear-store-data-analysis-api.onrender.com/average_cost_by_section"
-						alt="" data-position="center center" class="image" style="width: 690px; height: 690px;" />
+						alt="Presiona Cargar Gráfica" data-position="center center" class="image"
+						style="width: 690px; height: 690px;" />
 					<div class="content">
 						<div class="inner">
 							<h3>9. ¿Cuál es el coste medio de los artículos de cada sección (Hombre/Mujer/Nino)?</h3>
 							<p>Con este query se obtuvieron los datos:</p>
-							<blockquote>PENDIENTE: Pegar el query</blockquote>
+							<blockquote>{"$match": { "tipoProducto": "Articulo" }},<br><br>
+								{"$group": {<br>
+								"_id": "$seccionArticulo",<br>
+								"promedioCosto": { "$avg": "$precio" }}},<br><br>
+								{"$project": {<br>
+								"_id": 0,<br>
+								"seccion": "$_id",<br>
+								"promedioCosto": 1}}</blockquote>
 							<ul class="actions">
 								<button onclick="reloadImage('pregunta9')">Cargar Gráfica</button>
 							</ul>
