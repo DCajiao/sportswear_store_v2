@@ -19,7 +19,7 @@ def index():
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_purchases_by_date">/top_purchases_by_date</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/sales_by_section">/sales_by_section</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/products_by_type">/products_by_type</a></h3></center>
-    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_3_expensive_products">/top_3_expensive_products</a></h3></center>
+    <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_expensive_products">/top_expensive_products</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/sales_by_month">/sales_by_month</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/average_client_age">/average_client_age</a></h3></center>
     <center><h3><a href="https://sportswear-store-data-analysis-api.onrender.com/top_10_expensive_clients">/top_10_expensive_clients</a></h3></center>
