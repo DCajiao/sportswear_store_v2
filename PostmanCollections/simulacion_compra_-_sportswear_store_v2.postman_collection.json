@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "bbc75840-e3f4-42f6-a350-435c6f7a57ab",
+		"name": "Simulacion comprar - Sportswear Store V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33591016"
+	},
+	"item": [
+		{
+			"name": "GETALL_PRODUCTOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/listarProductos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"listarProductos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE_COMPRA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cuenta_usuario\": \"pedrorodriguez\",\r\n    \"costoTotal\": 0.1,\r\n    \"fechaCompra\": \"2024-03-14\",\r\n    \"detallesCompra\": [\r\n        {\r\n            \"talla\": \"M\",\r\n            \"cantidad\": 4,\r\n            \"producto_id\": \"664d736fe17fdc92971cf72e\",\r\n            \"personalizacion\": {\r\n                \"descripcion\": null,\r\n                \"diseno_id\": null\r\n            }}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE_ENVIO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"direccion\": \"Calle 48 con 24\",\r\n    \"fechaEnvio\": \"2024-04-12\",\r\n    \"codigoPostal\": 56789,\r\n    \"compra_id\": \"664a085c004ebae4c091a1a2\",\r\n    \"lugar_id\": \"664d392ae17fdc92971cf46b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_COMPRAS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/compras/eliminarCompra/664e07a586807b1458b72b4f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compras",
+						"eliminarCompra",
+						"664e07a586807b1458b72b4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_ENVIOS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/envios/eliminarEnvio/664d411bccb053269e3f781d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"envios",
+						"eliminarEnvio",
+						"664d411bccb053269e3f781d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

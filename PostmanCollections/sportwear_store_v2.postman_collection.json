@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "636f3e8a-3a30-4811-9f1b-04627585bc2b",
+		"name": "sportwear_store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33591016"
+	},
+	"item": [
+		{
+			"name": "GET_COMPRAS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compras/buscarPorId/6648ad3e4f46fe4c1b44de90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compras",
+						"buscarPorId",
+						"6648ad3e4f46fe4c1b44de90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTAR_COMPRAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/compras/listarCompras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compras",
+						"listarCompras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_COMPRAS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cuenta_usuario\":\"analopez\",\r\n    \"costoTotal\": 100.99,\r\n    \"fechaCompra\":\"2024-05-04\",\r\n    \"detallesCompra\":[\r\n        {\r\n            \"producto_id\":\"664e269c6ab1a096db429f3a\",\r\n            \"cantidad\":1,\r\n            \"talla\":\"M\",\r\n            \"personalizacion\":{\r\n                \"descripcion\":\"null\",\r\n                \"diseno_id\":\"null\"\r\n            }\r\n        },\r\n        {\r\n            \"producto_id\":\"664e269c6ab1a096db429f3b\",\r\n            \"cantidad\": 3,\r\n            \"talla\":\"Única\",\r\n            \"personalizacion\":{\r\n                \"descripcion\":\"null\",\r\n                \"diseno_id\":\"null\"\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compras/actualizarCompra/664e269d6ab1a096db429f46",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compras",
+						"actualizarCompra",
+						"664e269d6ab1a096db429f46"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_ENVIOS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/envios/buscarPorId/6648ad434f46fe4c1b44de91",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"envios",
+						"buscarPorId",
+						"6648ad434f46fe4c1b44de91"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTAR_ENVIOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/envios/listarEnvios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"envios",
+						"listarEnvios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_ENVIOS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"direccion\": \"Calle 31 con 44\",\r\n    \"fechaEnvio\": \"2024-05-19\",\r\n    \"codigoPostal\": \"28564\",\r\n    \"compra_id\": \"6648ad3e4f46fe4c1b44de90\",\r\n    \"lugar_id\": \"664a05ee004ebae4c091a190\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/envios/actualizarEnvio/664a0863004ebae4c091a1a4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"envios",
+						"actualizarEnvio",
+						"664a0863004ebae4c091a1a4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_LUGARES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Barrancabermeja\",\r\n    \"subLugar_id\":\"664e26986ab1a096db429f24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/lugares/guardar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lugares",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_LUGARES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/lugares/buscarPorId/664e26986ab1a096db429f27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lugares",
+						"buscarPorId",
+						"664e26986ab1a096db429f27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTAR_LUGARES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/lugares/listarLugares",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lugares",
+						"listarLugares"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_LUGARES",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/lugares/eliminarLugar/664e9379b0ea252b1fa53e70",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lugares",
+						"eliminarLugar",
+						"664e9379b0ea252b1fa53e70"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_LUGARES",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Pasto\",\r\n    \"subLugar_id\":\"664e26986ab1a096db429f24\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/lugares/actualizarLugar/664e26986ab1a096db429f26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"lugares",
+						"actualizarLugar",
+						"664e26986ab1a096db429f26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_PERSONAS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Ana Martinez\",\r\n    \"correo\": \"anaM@example.com\",\r\n    \"telefono\": \"3164582964\",\r\n    \"genero\": \"Mujer\",\r\n    \"edad\": 25,\r\n    \"lugar_id\": \"664e26986ab1a096db429f27\",\r\n    \"cuentas\": [\r\n        {\r\n            \"usuario\": \"anaMartinez\",\r\n            \"contraseña\":\"contraseña789\",\r\n            \"tipoCuenta\": \"Cliente\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/guardar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_PERSONAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/buscarPorId/664e269a6ab1a096db429f2f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"buscarPorId",
+						"664e269a6ab1a096db429f2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTAR_PERSONAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/listarPersonas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"listarPersonas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_PERSONAS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personas/eliminarPersona/664f3e716c814b4c155293a7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"eliminarPersona",
+						"664f3e716c814b4c155293a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_PERSONAS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Laura Muñoz\",\r\n    \"correo\": \"lauraM@example.com\",\r\n    \"telefono\": \"3156942568\",\r\n    \"genero\": \"Mujer\",\r\n    \"edad\": 28,\r\n    \"lugar_id\": \"664e26996ab1a096db429f2e\",\r\n    \"cuentas\": [\r\n        {\r\n            \"usuario\": \"lauramuñoz\",\r\n            \"contraseña\":\"contraseña412\",\r\n            \"tipoCuenta\": \"Cliente\"\r\n        },\r\n        {}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personas/actualizarPersona/664e269b6ab1a096db429f38",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personas",
+						"actualizarPersona",
+						"664e269b6ab1a096db429f38"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_PRODUCTOS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"precio\": 0,\r\n    \"imagenProducto\": \"\",\r\n    \"tipoProducto\": \"\",\r\n    \"descripcion\":\"\",\r\n    \"categoriaArticulo\": \"\",\r\n    \"seccionArticulo\": \"\",\r\n    \"cantidadArticulo\": 0,\r\n    \"especificacionesArticulo\": [{\"talla\": \"\", \"cantidad\": 0}],\r\n    \"productosPaquete\":[{\"producto_id\": \"\"},{\"producto_id\":\"\"}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/productos/crearProducto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"crearProducto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETBYID__PRODUCTOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/buscarPorId/664e269c6ab1a096db429f3b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"buscarPorId",
+						"664e269c6ab1a096db429f3b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_PRODUCTOS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/eliminarProducto/6651e48473de00147d58d143",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"eliminarProducto",
+						"6651e48473de00147d58d143"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_PRODUCTOS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"precio\": 0,\r\n    \"imagenProducto\": \"\",\r\n    \"tipoProducto\": \"\",\r\n    \"descripcion\":\"\",\r\n    \"categoriaArticulo\": \"\",\r\n    \"seccionArticulo\": \"\",\r\n    \"cantidadArticulo\": 0,\r\n    \"especificacionesArticulo\": [{\"talla\": \"\", \"cantidad\": 0}],\r\n    \"productosPaquete\":[{\"producto_id\": \"\"},{\"producto_id\":\"\"}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/productos/actualizarProducto/664f518f2e0b425ed7ddad63",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"actualizarProducto",
+						"664f518f2e0b425ed7ddad63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE_PROMOCIONES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaInicio\": \"2024-05-12\",\r\n    \"fechaFin\":\"2024-05-31\",\r\n    \"productos\":[{\"producto_id\":\"66526e88db2ef2eb707502d2\"}],\r\n    \"descuento\":0.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/promociones/crearPromo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promociones",
+						"crearPromo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETBYID__PROMOCIONES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/promociones/buscarPorId/664e26a76ab1a096db429f6e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promociones",
+						"buscarPorId",
+						"664e26a76ab1a096db429f6e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETALL_PROMOCIONES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/promociones/listarPromociones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promociones",
+						"listarPromociones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_PROMOCIONES",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/promociones/eliminarPromo/664e26a76ab1a096db429f6c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promociones",
+						"eliminarPromo",
+						"664e26a76ab1a096db429f6c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_PROMOCIONES",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaInicio\": \"2024-05-12\",\r\n    \"fechaFin\":\"2024-05-31\",\r\n    \"productos\":[{\"producto_id\":\"66526e88db2ef2eb707502d2\"}],\r\n    \"descuento\":0.15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/promociones/actualizarPromo/66527e6b8d7eb63cfe75f13b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"promociones",
+						"actualizarPromo",
+						"66527e6b8d7eb63cfe75f13b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE_RESEÑA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"comentario\":\"Super\",\r\n\t\"valoracion\": 4.9,\r\n\t\"cuenta_usuario\":\"juanperez\",\r\n\t\"fecha\":\"2024-05-18T13:45:32.528+00:00\",\r\n\t\"producto_id\":\"66526e88db2ef2eb707502d2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reseñas/crearReseñas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reseñas",
+						"crearReseñas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETBYID__RESEÑAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reseñas/buscarporid/664e26a56ab1a096db429f63",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reseñas",
+						"buscarporid",
+						"664e26a56ab1a096db429f63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETALL_RESEÑAS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reseñas/listarReseñas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reseñas",
+						"listarReseñas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_RESEÑAS_BY_PRODUCTO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reseñas/reseñasPorProducto/664e269c6ab1a096db429f39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reseñas",
+						"reseñasPorProducto",
+						"664e269c6ab1a096db429f39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_RESEÑA",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reseñas/eliminarReseña/664e8fbf611f7e393c6e89e9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reseñas",
+						"eliminarReseña",
+						"664e8fbf611f7e393c6e89e9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE_RESEÑA",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"comentario\":\"Gran producto, Super bueno\",\r\n\t\"valoracion\": 4.9,\r\n\t\"cuenta_usuario\":\"juanperez\",\r\n\t\"fecha\":\"2024-05-18T13:45:32.528+00:00\",\r\n\t\"producto_id\":\"66526e88db2ef2eb707502d2\",\r\n    \"replicas\":[{\r\n        \"comentario\":\"Totalmente de acuerdo!!\",\r\n        \"fecha\":\"2024-05-22T13:45:32.528+00:00\",\r\n        \"cuenta_Usuario\":\"lauramendoza\"}\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reseñas/actualizarReseña/66527f1f8d7eb63cfe75f13d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reseñas",
+						"actualizarReseña",
+						"66527f1f8d7eb63cfe75f13d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
