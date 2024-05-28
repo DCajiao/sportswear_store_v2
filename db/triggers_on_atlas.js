@@ -78,8 +78,11 @@ exports = async function (changeEvent) {
 
             compra.costoTotal = costoTotal;
 
+            // Tomar la fecha automáticamente
+            compra.fechaCompra = new Date();
+            
             // Actualizar la compra con los datos calculados
-            await comprasCollection.updateOne({ "_id": docId }, { "$set": { "costoTotal": costoTotal} });
+            await comprasCollection.updateOne({ "_id": docId }, { "$set": { "costoTotal": costoTotal, "fechaCompra": compra.fechaCompra } });
 
             // Actualizar nuevas cantidades de productos disponibles por talla y recalcular cantidadArticulo
             for (const detalle of compra.detallesCompra) {
@@ -234,8 +237,8 @@ exports = async function (changeEvent) {
             // Eliminar el registro de envío asociado
             await enviosCollection.deleteOne({ "compra_id": docId });
 
-            // Obtener los detalles de la compra eliminada
-            const compraEliminada = await comprasCollection.findOne({ "_id": docId });
+            // Obtener los detalles de la compra eliminada antes de eliminarla
+            const compraEliminada = changeEvent.fullDocumentBeforeChange;
 
             if (compraEliminada && compraEliminada.detallesCompra) {
                 for (const detalle of compraEliminada.detallesCompra) {
